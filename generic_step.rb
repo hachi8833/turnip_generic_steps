@@ -43,6 +43,12 @@ step %(:textボタンをクリックする) do |text|
   click_button text
 end
 
+	#上のエイリアス
+step %(:n番目の:textボタンをクリックする) do |n, text|
+  n = n.to_i - 1
+  all(:link_or_button, text)[n].click
+end
+
 	# フィールドに文字列を入力する |fieldはモデル[属性]の形式
 step %(:fieldに:valueを設定する) do |field, value|
   fill_in field, with: value
