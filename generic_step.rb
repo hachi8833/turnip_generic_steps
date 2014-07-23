@@ -13,6 +13,11 @@ step %(:textと表示されていない) do |text|
   expect(page).not_to have_content(text)
 end
 
+	#表示個数確認
+step %(:textが:count個表示されている) do |text, count|
+  expect(page.all(text).count).to eq (count)
+end
+
 ## 操作用ステップ
 
 	#ページ移動
