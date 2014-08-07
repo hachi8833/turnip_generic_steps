@@ -14,8 +14,8 @@ step %(:textと表示されていない) do |text|
 end
 
 	#表示個数確認
-step %(:textが:count個表示されている) do |txt, cnt|
-  expect(page).to have_content(txt), count: cnt.to_i
+step %(:textが:cnt個表示されている) do |text, cnt|
+  expect(page).to have_content(text, count: cnt)
 end
 
 ## 操作用ステップ
